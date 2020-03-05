@@ -96,7 +96,9 @@ async function buildCacheManifest() {
 async function build() {
   const generated = [];
 
-  const postcssConfig = {};
+  const postcssConfig = {
+    inject: false,
+  };
   if (isProd) {
     // nb. Only require() autoprefixer when used.
     const autoprefixer = require("autoprefixer");
